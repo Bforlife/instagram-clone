@@ -1,2 +1,80 @@
 # instagram-clone
-This project is an instagram clone that was achieved using php, css jquery and mysql
+
+
+This is a PHP-based Instagram clone web application. It allows users to register, log in, create posts with images or videos, comment, like, and follow other users. The project uses Bootstrap for UI components and jQuery for client-side interactivity.
+
+## Features
+
+- User registration and authentication
+- Create posts with image/video uploads
+- Like and comment on posts
+- Follow/unfollow users
+- Responsive design using Bootstrap
+- Modal dialogs for posts and comments
+- Search functionality
+
+## Project Structure
+
+```
+index.php
+logout.php
+reg.php
+assest/
+  css/
+  images/
+  logo/
+  profile/
+  videos/
+auth/
+  registration/
+bootstrap/
+  css/
+  js/
+classes/
+  regClass.php
+  selectUserClass.php
+  suggestedUsers.Class.php
+  updateClass.php
+  userComment.Class.php
+  userDataClass.php
+  userLoginClass.php
+  userPosts.Class.php
+controls/
+  insertComments.php
+  insertFollows.php
+  insertLikes.php
+  reg.php
+  updateProfile.php
+  uploadPosts.php
+dashboard/
+db/
+includes/
+jQuery/
+js/
+vendor/
+```
+
+## Getting Started
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/instagram-clone.git
+   ```
+2. Set up a local web server (e.g., XAMPP) and import the database.
+3. Configure database credentials in the appropriate PHP files.
+4. Access the app via `index.php`.
+
+## Requirements
+
+- PHP >= 5.6
+- MySQL
+- Bootstrap
+- jQuery
+
+## Contributing
+
+Pull requests are welcome! Please see the [CONTRIBUTING.md](vendor/cloudinary/cloudinary_php/CONTRIBUTING.md) for guidelines.
+
+## License
+
+This project is for educational purposes.
