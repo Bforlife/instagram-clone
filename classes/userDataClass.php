@@ -52,16 +52,12 @@ public function getTotalFollowing() {
 }
 
 
-public function fetchSearchedUser($username){
-    $sql = $this->db->prepare("SELECT * FROM users WHERE username=:username");
-    $sql->execute([':username'=>$username]);
+public function fetchSearchedUser($id){
+    $sql = $this->db->prepare("SELECT * FROM users WHERE id=:id");
+    $sql->execute([':id'=>$id]);
     $result = $sql->fetch(PDO::FETCH_OBJ);
     return $result->id;
 }
-
-
-
-
 
  public function getUserId(){
     return $this->id;

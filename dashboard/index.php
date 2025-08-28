@@ -151,11 +151,6 @@ if(isset($_GET['p'])){
   <!-- post actions -->
   <div class=" pt-2 fs-6">
     <div class="post-actions mb-2 d-flex gap-3">
-      <form  method="post" id="like_form">
-        <input type="hidden" value="<?php echo $postId->id; ?>" name="user_id">
-        <input type="hidden" value="<?php echo $user_data->getUserId(); ?>" name="post_id">
-        <!-- <button class=" btn btn-sm" style="border:none;outline:none;color:white">like</button> -->
-      </form>
       <i class="far fa-heart"></i>
       <i class="far fa-comment" id="view"></i>
       <i class="far fa-paper-plane"></i>
@@ -211,53 +206,10 @@ if(isset($_GET['p'])){
   </div>
 </div>
 
-<!-- model for ellipse menu -->
-<div class="options-modal d-none" id="optionsModal">
-  <ul class="options-list">
-    <li class="text-danger">Report</li>
-    <li>Unfollow</li>
-    <li>Add to favourites</li>
-    <li> Go to post</li>
-    <li>Share to...</li>
-    <li>Copy link</li>
-    <li>Embed</li>
-    <li>About this account</li>
-    <li id="cancelOptions" class="fw-bold">Cancel</li>
-  </ul>
-</div>
-
-
-<!-- offcanvas for the display the search input -->
-<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel" >
-  <div class="offcanvas-header">
-    <button type="button" class="btn-close 
-    searchBtnClose" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body" >
- <form id="searchForm" method="GET" class="d-flex align-items-center gap-2  mt-3 pt-2">
-      <input type="text" class=" searchTerms border-0 shadow-none" name="search" placeholder="Find Your interest..." required>
-      <input type="submit" class="btn btn-sm searchInputBtn" value="Search">
-    </form>
-
-    <div id="searchDisplay">
-    <div>
-      <img src="assest/profile/profile10.jpg" class="img-fluid">
-    </div>
-
-    <div class="searchActions">
-      <span>beddings_couture</span> <br>
-      <small>beddings_couture</small>
-    </div>
-    </div>
-  </div>
-</div>
-
-
 <?php require '../includes/footer.php';?>
 
 
 <script>
-
 document.addEventListener("DOMContentLoaded", function () {
     
     // Close modal and remove ID from URL
@@ -429,7 +381,25 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-  // insert like
+  // search 
+  $(".searchuser").on("submit", function(e) {
+    e.preventDefault();
+    var formData = new FormData(this);
+
+    $.ajax({
+      url: "../controls/ajax_seach_user.php",
+      type: "POST",
+      data: formData,
+      contentType: false,
+      processData: false,
+      success: function(response) {
+        $(".msg").html(response);
+        
+        
+      }
+    });
+  });
+
 
 
 </script>

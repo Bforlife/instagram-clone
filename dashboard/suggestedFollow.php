@@ -7,7 +7,7 @@
 <?php 
 
 ?>
-    <div class="info"></div>
+    <!-- <div class="info"></div> -->
 
 <!-- Single Suggested User -->
  <?php foreach($suggested as $row){ 
@@ -15,14 +15,14 @@
   
 <div class="suggested-user">
 <div class="profile-pic">
-  <a href="profile.php?username=<?php echo $row->username; ?>">
+  <a href="profile.php?user_id=<?php echo $row->id; ?>">
     <img src="<?php echo $row->profile; ?>" alt="" 
          style="border-radius: 50px; width:40px; height:40px;">
   </a>
 </div>
     <!-- use get to fetch the username from the url -->
  <div class="user-info">
-  <a href="profile.php?username=<?php echo $row->username; ?>" 
+  <a href="profile.php?user_id=<?php echo $row->id; ?>" 
      style="text-decoration:none;">
     <span><?php echo $row->username; ?></span>
   </a>
@@ -58,7 +58,6 @@ $(".follow-form").on("submit", function(e) {
     processData: false,
     success: function(data) {
       let result = data.trim();
-
       if (result === "Followed successfully") {
         $(".info").html('<span class="text-success">' + result + '</span>');
 

@@ -17,7 +17,6 @@ require '../classes/suggestedUsers.Class.php';
 
 // commentData
 $commentObj = new CommentData($db);
-
 // postData
 $obj = new PostData ($db);
 
@@ -47,6 +46,7 @@ $totalPosts="";
 
 // COUNT AND FETCH POSTS FOR USER PROFILE
 $uIdPostCount = $obj->getUserPostsCount($currentUserId);
+
 $userPosts = $obj->getUserPosts($currentUserId);
 // print_r($userPosts);
 
@@ -82,30 +82,6 @@ $suggested = $suggestedObj->getSuggestedUsers();
 
 
 
-
-
-    
-
-    // require '../classes/selectUserClass.php';
-    // $obj = new selectUserClass($db);
-
-
-//@$results = $obj->fetchAllPostsWithUserInfo();
-
-//@$response = $obj->fetchSinglePostWithUser($id);
-
-// if (isset($_GET['p'])) {
-//     $post_id = $_GET['p'];
-//       // Get the post and its user info
-//     $post = $obj->fetchSinglePostWithUser($post_id);
-    
-//     // Get all the comments for the post
-//     $commentResponse = $obj->fetchCommentsForPost($post_id);
-// }
-
-// fetch suggested users excluding the logged-in user
-//$currentUserId = $_SESSION['id'];
-//@$res = $obj->fetchFewSuggestedUsers($currentUserId);
 }
 ?>
 

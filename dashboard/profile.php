@@ -2,9 +2,13 @@
 <div class="sidebar" >
   <?php require '../includes/nav.php'; 
   
-  if (isset($_GET['username'])) {
-    $username = $_GET['username'];
-    $searchedUserProfileId = $user_data->fetchSearchedUser($username);
+  // the posts aint seeing the id in the url
+  if (isset($_GET['user_id'])) {
+    $user_id = $_GET['user_id'];
+    $searchedUserProfileId = $user_data->fetchSearchedUser($user_id);
+    $userPosts = $obj->getUserPosts($user_id);
+    $uIdPostCount = $obj->getUserPostsCount($user_id);
+
     //  $searchedUserProfileId=$user_data->getUsername();
      $user_data = new userData($searchedUserProfileId,$db);
     

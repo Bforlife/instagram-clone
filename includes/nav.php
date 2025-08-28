@@ -90,21 +90,14 @@
     <button type="button" class="btn-close 
     searchBtnClose" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body" >
- <form id="searchForm" method="GET" class="d-flex align-items-center gap-2  mt-3 pt-2">
+  <div class="offcanvas-body" style="position:relative;">
+ <form class="searchuser" method="post" class="d-flex align-items-center gap-2  mt-3 pt-2">
       <input type="text" class=" searchTerms border-0 shadow-none" name="search" placeholder="Find Your interest..." required>
-      <input type="submit" class="btn btn-sm searchInputBtn" value="Search">
+      <input type="submit" class="btn btn-sm searchInputBtn" value="Search" style="position: absolute; right:10px;">
     </form>
-
-    <div id="searchDisplay">
-    <div>
-      <img src="assest/profile/profile10.jpg" class="img-fluid">
-    </div>
-
-    <div class="searchActions">
-      <span>beddings_couture</span> <br>
-      <small>beddings_couture</small>
-    </div>
+    
+    <div id="searchDisplay"  class="msg" style="display:flex; gap:15px">
+  <!-- the display is appended here -->
     </div>
   </div>
 </div>
